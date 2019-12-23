@@ -1,0 +1,27 @@
+spring:
+  application:
+    name: message-producer
+  cloud:
+    stream:
+      bindings:
+#        input:
+#          consumer:
+#            concurrency: 2
+#          destination: BSIRTopic
+#          contentType: text/plain;charset=UTF-8
+#          group: meli
+        output:
+          destination: Mostafa
+          contentType: text/plain;charset=UTF-8
+        hassanOut:
+          destination: hassan
+          contentType: text/plain;charset=UTF-8
+      kafka:
+        binder:
+          brokers: 192.168.160.9:9092
+          autoCreateTopics: false
+server:
+  port: 7070
+consumers-info:
+  A: Mostafa:mos:3,hassan:has:2
+  B: hassan:has:3,Mostafa:mos:3
